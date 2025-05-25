@@ -49,7 +49,7 @@ export default function Nav({ color }) {
   };
   const viewResume = (type) => {
     if (type === "academic") {
-      window.open("/assets/resume-academic.pdf", "_blank");
+      window.open("/assets/Academic_CV_ACM.pdf", "_blank");
     } else if (type === "industry") {
       window.open("/assets/resume-industry.pdf", "_blank");
     }
