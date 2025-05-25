@@ -17,4 +17,3 @@ root.render(
     </ChakraProvider>
   </>
 );
-localStorage.removeItem("chakra-ui-color-mode");
