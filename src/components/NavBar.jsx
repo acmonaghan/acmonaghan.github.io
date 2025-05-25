@@ -19,7 +19,7 @@ import {
 } from "@chakra-ui/react";
 import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useState } from "react";
-const TbIcons = require("react-icons/tb");
+import * as TbIcons from "react-icons/tb";
 
 export default function Nav({ color }) {
   const logo = "ACM";
@@ -106,15 +106,9 @@ export default function Nav({ color }) {
                 <Button variant="ghost" onClick={scrollToAbout}>
                   About
                 </Button>
-                <Menu>
-                  <MenuButton as={Button} variant="ghost" rightIcon={<ChevronDownIcon />}>
-                    Resume
-                  </MenuButton>
-                  <MenuList>
-                    <MenuItem onClick={() => viewResume("academic")}>Academic</MenuItem>
-                    <MenuItem onClick={() => viewResume("industry")}>Industry</MenuItem>
-                  </MenuList>
-                </Menu>
+                <Button variant="ghost" onClick={() => viewResume("academic")}>
+                  Resume
+                </Button>
                 <Button variant="ghost" onClick={scrollToExperience}>
                   Experience
                 </Button>
@@ -143,18 +137,9 @@ export default function Nav({ color }) {
                       <Button variant="ghost" onClick={scrollToAbout}>
                         About
                       </Button>
-                      <Button variant="ghost" onClick={viewResume}>
+                      <Button variant="ghost" onClick={() => viewResume("academic")}>
                         Resume
                       </Button>
-                      <Menu>
-                        <MenuButton as={Button} variant="ghost" rightIcon={<ChevronDownIcon />}>
-                          Resume
-                        </MenuButton>
-                        <MenuList>
-                          <MenuItem onClick={() => viewResume("academic")}>Academic</MenuItem>
-                          <MenuItem onClick={() => viewResume("industry")}>Industry</MenuItem>
-                        </MenuList>
-                      </Menu>
                       <Button variant="ghost" onClick={scrollToExperience}>
                         Experience
                       </Button>
