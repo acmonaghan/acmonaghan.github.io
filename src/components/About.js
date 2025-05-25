@@ -5,7 +5,7 @@ import {
   Container,
   Box,
   HStack,
-  Link, 
+  Link,
 } from "@chakra-ui/react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -30,34 +30,34 @@ export default function About({ color }) {
   }
 
   return (
-<Container
-  maxW="5xl"
-  id="about"
-  bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
-  backdropFilter="blur(10px)" // frosted glass
-  borderRadius="2xl"
-  boxShadow="lg"
-  p={6} // optional: padding
->
-  <Stack
-    as={Box}
-    textAlign="center"
-    spacing={{ base: 8, md: 5 }}
-    pb={{ base: 20, md: 5 }}
-  >
-    <Stack align="center" direction="row" px={4}>
-      <HStack mx={4}>
-        <Text fontWeight={800} color={`${color}.400`} fontSize={"4xl"}>About</Text>
-      </HStack>
-      <Divider orientation="horizontal" />
-    </Stack>
+    <Container
+      maxW="5xl"
+      id="about"
+      bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
+      backdropFilter="blur(10px)" // frosted glass
+      borderRadius="2xl"
+      boxShadow="lg"
+      p={6} // optional: padding
+    >
+      <Stack
+        as={Box}
+        textAlign="center"
+        spacing={{ base: 8, md: 5 }}
+        pb={{ base: 20, md: 5 }}
+      >
+        <Stack align="center" direction="row" px={4}>
+          <HStack mx={4}>
+            <Text fontWeight={800} color={`${color}.400`} fontSize={"4xl"}>About</Text>
+          </HStack>
+          <Divider orientation="horizontal" />
+        </Stack>
 
-    <Box px={4}>
-      <ReactMarkdown components={markdownComponents} remarkPlugins={[remarkGfm]}>
-        {profile.about}
-      </ReactMarkdown>
-    </Box>
-  </Stack>
-</Container>
+        <Box px={4}>
+          <ReactMarkdown components={markdownComponents} remarkPlugins={[remarkGfm]}>
+            {profile.about}
+          </ReactMarkdown>
+        </Box>
+      </Stack>
+    </Container>
   );
 }

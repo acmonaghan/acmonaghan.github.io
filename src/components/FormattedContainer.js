@@ -27,12 +27,12 @@ export default function FormattedContainer({ color, category = "exp", name = "Ex
   }
 
   return (
-    <Container maxW={"5xl"} id="experience"   bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
-  backdropFilter="blur(10px)" // frosted glass
-  borderRadius="2xl"
-  boxShadow="lg"
-  p={6}
-  >
+    <Container maxW={"5xl"} id="experience" bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
+      backdropFilter="blur(10px)" // frosted glass
+      borderRadius="2xl"
+      boxShadow="lg"
+      p={6}
+    >
       <Stack as={Box} textAlign={"left"} spacing={{ base: 8, md: 5 }} pb={{ base: 20, md: 5 }}>
         <Stack align="center" direction="row" px={4}>
           <HStack mx={4}>
@@ -46,10 +46,10 @@ export default function FormattedContainer({ color, category = "exp", name = "Ex
         <Stack px={4} spacing={4} >
           {experience.map((exp, idx) => (
             <Fade bottom key={exp.company + idx}>
-              <Card size="sm"  bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
-  backdropFilter="blur(10px)" // frosted glass
-  borderRadius="2xl"
-  boxShadow="lg">
+              <Card size="sm" bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
+                backdropFilter="blur(10px)" // frosted glass
+                borderRadius="2xl"
+                boxShadow="lg">
                 <CardHeader>
                   <Flex justifyContent="space-between" align="left">
                     <HStack>

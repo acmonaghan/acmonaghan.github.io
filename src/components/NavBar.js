@@ -7,49 +7,52 @@ import {
   DrawerContent,
   useColorModeValue,
   Stack,
-  useColorMode,
   IconButton,
   useMediaQuery,
   useDisclosure,
   HStack,
   Link,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 const TbIcons = require("react-icons/tb");
 
 export default function Nav({ color }) {
   const logo = "ACM";
   const colors = {
-  "blue": "#3182CE", 
-  "cyan": "#00B5D8", 
-  "gray": "#718096", 
-  "green": "#38A169", 
-  "orange": "#DD6B20", 
-  "pink": "#D53F8C", 
-  "purple": "#805AD5", 
-  "red": "#E53E3E", 
-  "teal": "#319795", 
-  "yellow": "#D69E2E"};
+    "blue": "#3182CE",
+    "cyan": "#00B5D8",
+    "gray": "#718096",
+    "green": "#38A169",
+    "orange": "#DD6B20",
+    "pink": "#D53F8C",
+    "purple": "#805AD5",
+    "red": "#E53E3E",
+    "teal": "#319795",
+    "yellow": "#D69E2E"
+  };
   const [scroll, setScroll] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const [isLargerThanMD] = useMediaQuery("(min-width: 48em)");
   const scrollToHero = () => {
-  const heroSection = document.querySelector("#hero");
+    const heroSection = document.querySelector("#hero");
     heroSection.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToAbout = () => {
     const aboutSection = document.querySelector("#about");
     aboutSection.scrollIntoView({ behavior: "smooth" });
   };
-  const viewResume = () => {
-        window.open(
-                "/assets/resume.pdf",
-                "_blank",
-                "noreferrer,noopener"
-              );
+  const viewResume = (type) => {
+    if (type === "academic") {
+      window.open("/assets/resume-academic.pdf", "_blank");
+    } else if (type === "industry") {
+      window.open("/assets/resume-industry.pdf", "_blank");
+    }
   }
   const scrollToExperience = () => {
     const experienceSection = document.querySelector("#experience");
@@ -103,9 +106,15 @@ export default function Nav({ color }) {
                 <Button variant="ghost" onClick={scrollToAbout}>
                   About
                 </Button>
-                <Button variant="ghost" onClick={viewResume}>
-                  Resume
-                </Button> 
+                <Menu>
+                  <MenuButton as={Button} variant="ghost" rightIcon={<ChevronDownIcon />}>
+                    Resume
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem onClick={() => viewResume("academic")}>Academic</MenuItem>
+                    <MenuItem onClick={() => viewResume("industry")}>Industry</MenuItem>
+                  </MenuList>
+                </Menu>
                 <Button variant="ghost" onClick={scrollToExperience}>
                   Experience
                 </Button>
@@ -117,9 +126,6 @@ export default function Nav({ color }) {
             ) : (
               <></>
             )}
-            <Button onClick={toggleColorMode}>
-              {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
-            </Button>
 
             {isLargerThanMD ? (
               <></>
@@ -140,6 +146,15 @@ export default function Nav({ color }) {
                       <Button variant="ghost" onClick={viewResume}>
                         Resume
                       </Button>
+                      <Menu>
+                        <MenuButton as={Button} variant="ghost" rightIcon={<ChevronDownIcon />}>
+                          Resume
+                        </MenuButton>
+                        <MenuList>
+                          <MenuItem onClick={() => viewResume("academic")}>Academic</MenuItem>
+                          <MenuItem onClick={() => viewResume("industry")}>Industry</MenuItem>
+                        </MenuList>
+                      </Menu>
                       <Button variant="ghost" onClick={scrollToExperience}>
                         Experience
                       </Button>

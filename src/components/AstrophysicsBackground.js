@@ -14,11 +14,11 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    
+
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild(renderer.domElement);
-    
+
     sceneRef.current = scene;
     rendererRef.current = renderer;
 
@@ -30,14 +30,14 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const geometry = new THREE.BufferGeometry();
       const vertices = [];
       const colors = [];
-      
+
       for (let i = 0; i < 3000; i++) {
         vertices.push(
           (Math.random() - 0.5) * 500,
           (Math.random() - 0.5) * 500,
           (Math.random() - 0.5) * 500
         );
-        
+
         // Star colors - mix of white, blue, and purple
         const colorChoice = Math.random();
         if (colorChoice < 0.5) {
@@ -48,17 +48,17 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
           colors.push(0.9, 0.7, 1); // Purple
         }
       }
-      
+
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
       geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-      
+
       const material = new THREE.PointsMaterial({
         size: 2,
         vertexColors: true,
         transparent: true,
         opacity: 0.9
       });
-      
+
       return new THREE.Points(geometry, material);
     };
 
@@ -67,27 +67,27 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const geometry = new THREE.BufferGeometry();
       const vertices = [];
       const colors = [];
-      
+
       for (let i = 0; i < particleCount; i++) {
         const angle = (i / particleCount) * Math.PI * 2;
         const x = Math.cos(angle) * radius;
         const y = Math.sin(angle) * radius;
         const z = (Math.random() - 0.5) * 15;
-        
+
         vertices.push(x, y, z);
         colors.push(color.r, color.g, color.b);
       }
-      
+
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
       geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
-      
+
       const material = new THREE.PointsMaterial({
         size: 2.5,
         vertexColors: true,
         transparent: true,
         opacity: 0.7
       });
-      
+
       const ring = new THREE.Points(geometry, material);
       ring.userData = { speed, originalPositions: [...vertices] };
       return ring;
@@ -96,17 +96,17 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
     // Create quasar with accretion disk and jets
     const createQuasar = () => {
       const quasarGroup = new THREE.Group();
-      
+
       // Central bright core
       const coreGeometry = new THREE.SphereGeometry(3, 16, 16);
-      const coreMaterial = new THREE.MeshBasicMaterial({ 
+      const coreMaterial = new THREE.MeshBasicMaterial({
         color: 0xffffff,
         transparent: true,
         opacity: 1.0
       });
       const core = new THREE.Mesh(coreGeometry, coreMaterial);
       quasarGroup.add(core);
-      
+
       // Bright glow around core
       const glowGeometry = new THREE.SphereGeometry(8, 16, 16);
       const glowMaterial = new THREE.ShaderMaterial({
@@ -138,7 +138,7 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       });
       const glow = new THREE.Mesh(glowGeometry, glowMaterial);
       quasarGroup.add(glow);
-      
+
       // Accretion disk
       const diskGeometry = new THREE.RingGeometry(12, 35, 64);
       const diskMaterial = new THREE.ShaderMaterial({
@@ -183,7 +183,7 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const disk = new THREE.Mesh(diskGeometry, diskMaterial);
       disk.rotation.x = Math.PI / 2;
       quasarGroup.add(disk);
-      
+
       // Dusty torus around black hole
       const torusGeometry = new THREE.TorusGeometry(25, 8, 16, 64);
       const torusMaterial = new THREE.ShaderMaterial({
@@ -218,7 +218,7 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const torus = new THREE.Mesh(torusGeometry, torusMaterial);
       torus.rotation.x = Math.PI / 2;
       quasarGroup.add(torus);
-      
+
       // Polar jets (fixed and symmetric)
       const createJet = (direction) => {
         const jetGeometry = new THREE.CylinderGeometry(1, 4, 100, 12);
@@ -252,25 +252,25 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
           transparent: true,
           blending: THREE.AdditiveBlending
         });
-        
+
         const jet = new THREE.Mesh(jetGeometry, jetMaterial);
         jet.position.y = direction * 50;
         return jet;
       };
-      
+
       quasarGroup.add(createJet(1));
       quasarGroup.add(createJet(-1));
-      
+
       // Position quasar off to one side
-      quasarGroup.position.set(-60, 30, -50);
-      quasarGroup.userData = { 
-        core, 
-        glow, 
+      quasarGroup.position.set(-100, 30, -50);
+      quasarGroup.userData = {
+        core,
+        glow,
         disk,
         torus,
         jets: [quasarGroup.children[4], quasarGroup.children[5]]
       };
-      
+
       return quasarGroup;
     };
 
@@ -280,14 +280,14 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const vertices = [];
       const colors = [];
       const sizes = [];
-      
+
       for (let i = 0; i < 150; i++) {
         vertices.push(
           (Math.random() - 0.5) * 400,
           (Math.random() - 0.5) * 400,
           (Math.random() - 0.5) * 200
         );
-        
+
         // Bright nebula colors
         const colorChoice = Math.random();
         if (colorChoice < 0.3) {
@@ -297,14 +297,14 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
         } else {
           colors.push(1.0, 0.7, 0.9); // Bright Pink
         }
-        
+
         sizes.push(Math.random() * 15 + 10); // Much larger sizes
       }
-      
+
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
       geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
       geometry.setAttribute('size', new THREE.Float32BufferAttribute(sizes, 1));
-      
+
       const material = new THREE.ShaderMaterial({
         uniforms: {
           time: { value: 0 }
@@ -341,7 +341,7 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
         vertexColors: true,
         depthWrite: false
       });
-      
+
       return new THREE.Points(geometry, material);
     };
 
@@ -350,30 +350,30 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       const geometry = new THREE.BufferGeometry();
       const vertices = [];
       const velocities = [];
-      
+
       for (let i = 0; i < 800; i++) {
         vertices.push(
           (Math.random() - 0.5) * 400,
           (Math.random() - 0.5) * 400,
           (Math.random() - 0.5) * 300
         );
-        
+
         velocities.push(
           (Math.random() - 0.5) * 0.05,
           (Math.random() - 0.5) * 0.05,
           (Math.random() - 0.5) * 0.05
         );
       }
-      
+
       geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
-      
+
       const material = new THREE.PointsMaterial({
         size: 0.8,
         color: 0xaaaaaa,
         transparent: true,
         opacity: 0.3
       });
-      
+
       const dust = new THREE.Points(geometry, material);
       dust.userData = { velocities };
       return dust;
@@ -382,16 +382,16 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
     // Create distant planets with orbital parameters
     const createOrbitingPlanet = (orbitRadius, orbitSpeed, planetRadius, color, offsetAngle = 0) => {
       const geometry = new THREE.SphereGeometry(planetRadius, 20, 20);
-      const material = new THREE.MeshBasicMaterial({ 
+      const material = new THREE.MeshBasicMaterial({
         color: color,
         transparent: true,
         opacity: 0.6
       });
-      
+
       const planet = new THREE.Mesh(geometry, material);
-      planet.userData = { 
-        orbitRadius, 
-        orbitSpeed, 
+      planet.userData = {
+        orbitRadius,
+        orbitSpeed,
         offsetAngle,
         rotationSpeed: Math.random() * 0.002 + 0.001
       };
@@ -411,7 +411,7 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
       createOrbitalRing(100, 50, { r: 0.8, g: 0.4, b: 1 }, -0.002),
       createOrbitalRing(140, 40, { r: 1, g: 0.6, b: 0.8 }, 0.002)
     ];
-    
+
     rings.forEach(ring => scene.add(ring));
 
     const cosmicDust = createCosmicDust();
@@ -420,20 +420,20 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
     // Add orbiting planets
     const planets = [];
     const planetConfigs = [
-      { orbitRadius: 200, orbitSpeed: 0.1, planetRadius: 10, color: 0x7A85FF, offsetAngle: Math.PI/4 },
-      { orbitRadius: 120, orbitSpeed: -0.015, planetRadius: 8, color: 0xC673FF, offsetAngle: Math.PI },
-      { orbitRadius: 160, orbitSpeed: 0.01, planetRadius: 12, color: 0x73C6FF, offsetAngle: Math.PI / 2 },
-      { orbitRadius: 200, orbitSpeed: -0.08, planetRadius: 6, color: 0xFF73C6, offsetAngle: Math.PI * 1.5 },
-      { orbitRadius: 200, orbitSpeed: 0.025, planetRadius: 9, color: 0x85FF7A, offsetAngle: Math.PI / 3 }
+      { orbitRadius: 200, orbitSpeed: 0.00001, planetRadius: 10, color: 0x7A85FF, offsetAngle: Math.PI / 4 },
+      { orbitRadius: 120, orbitSpeed: -0.00015, planetRadius: 8, color: 0xC673FF, offsetAngle: Math.PI },
+      { orbitRadius: 160, orbitSpeed: 0.0001, planetRadius: 12, color: 0x73C6FF, offsetAngle: Math.PI / 2 },
+      { orbitRadius: 200, orbitSpeed: -0.0008, planetRadius: 6, color: 0xFF73C6, offsetAngle: Math.PI * 1.5 },
+      { orbitRadius: 200, orbitSpeed: 0.00025, planetRadius: 9, color: 0x85FF7A, offsetAngle: Math.PI / 3 }
     ];
-    
+
     for (let i = 0; i < Math.min(planetCount, planetConfigs.length); i++) {
       const config = planetConfigs[i];
       const planet = createOrbitingPlanet(
-        config.orbitRadius, 
-        config.orbitSpeed, 
-        config.planetRadius, 
-        config.color, 
+        config.orbitRadius,
+        config.orbitSpeed,
+        config.planetRadius,
+        config.color,
         config.offsetAngle
       );
       planets.push(planet);
@@ -451,69 +451,69 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
     // Animation loop
     const animate = () => {
       animationIdRef.current = requestAnimationFrame(animate);
-      
+
       const time = Date.now() * 0.001;
-      
+
       // Rotate starfield slowly
       starfield.rotation.y += 0.0001;
       starfield.rotation.x += 0.00005;
-      
+
       // Update nebula particles
       if (nebulaParticles.material.uniforms) {
         nebulaParticles.material.uniforms.time.value = time;
       }
-      
+
       // Animate orbital rings
       rings.forEach((ring, index) => {
         ring.rotation.z += ring.userData.speed;
-        
+
         // Add slight vertical oscillation
         const positions = ring.geometry.attributes.position.array;
         const originalPositions = ring.userData.originalPositions;
-        
+
         for (let i = 0; i < positions.length; i += 3) {
           positions[i + 2] = originalPositions[i + 2] + Math.sin(time * 0.5 + i * 0.01) * 3;
         }
-        
+
         ring.geometry.attributes.position.needsUpdate = true;
       });
-      
+
       // Animate cosmic dust
       const dustPositions = cosmicDust.geometry.attributes.position.array;
       const velocities = cosmicDust.userData.velocities;
-      
+
       for (let i = 0; i < dustPositions.length; i += 3) {
         dustPositions[i] += velocities[i];
         dustPositions[i + 1] += velocities[i + 1];
         dustPositions[i + 2] += velocities[i + 2];
-        
+
         // Wrap around boundaries
         if (Math.abs(dustPositions[i]) > 200) velocities[i] *= -1;
         if (Math.abs(dustPositions[i + 1]) > 200) velocities[i + 1] *= -1;
         if (Math.abs(dustPositions[i + 2]) > 150) velocities[i + 2] *= -1;
       }
-      
+
       cosmicDust.geometry.attributes.position.needsUpdate = true;
-      
+
       // Animate orbiting planets
       planets.forEach((planet) => {
         const { orbitRadius, orbitSpeed, offsetAngle, rotationSpeed } = planet.userData;
         const angle = time * orbitSpeed + offsetAngle;
-        
+
         // Orbital position
         planet.position.x = Math.cos(angle) * orbitRadius;
         planet.position.z = Math.sin(angle) * orbitRadius - 100; // Offset behind camera
         planet.position.y = Math.sin(angle * 0.5) * 20; // Slight vertical oscillation
-        
+
         // Planet rotation
         planet.rotation.y += rotationSpeed;
       });
-      
+
       // Animate quasar if present
       if (quasar) {
         // Rotate the entire quasar slowly
-        quasar.rotation.y += 0.001;
-        
+        quasar.rotation.y += 0.01;
+
         // Update shader uniforms
         if (quasar.userData.glow.material.uniforms) {
           quasar.userData.glow.material.uniforms.time.value = time;
@@ -524,18 +524,18 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
         if (quasar.userData.torus.material.uniforms) {
           quasar.userData.torus.material.uniforms.time.value = time;
         }
-        
+
         // Animate jets
         quasar.userData.jets.forEach(jet => {
           if (jet.material.uniforms) {
             jet.material.uniforms.time.value = time;
           }
         });
-        
+
         // Rotate accretion disk
         quasar.userData.disk.rotation.z += 0.005;
       }
-      
+
       renderer.render(scene, camera);
     };
 
@@ -563,8 +563,8 @@ const AstrophysicsBackground = ({ hasQuasar = false, planetCount = 3 }) => {
   }, [hasQuasar, planetCount]);
 
   return (
-    <div 
-      ref={mountRef} 
+    <div
+      ref={mountRef}
       style={{
         position: 'fixed',
         top: 0,
