@@ -24,7 +24,7 @@ export default function Footer() {
           <Link href="https://github.com/eldoraboo/portable-portfolio" isExternal color="blue.400">
             eldoraboo's portable portfolio
           </Link>
-          . Designed by{" "}
+          . Coded and designed by{" "}
           <Link href="https://www.saikumarmk.com/" isExternal color="blue.400">
             Sai
           </Link>
