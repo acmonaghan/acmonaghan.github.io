@@ -16,7 +16,7 @@ import {
   ListIcon,
 } from "@chakra-ui/react";
 import { ChevronRightIcon } from "@chakra-ui/icons";
-import { Fade } from "react-reveal";
+import { motion } from "framer-motion";
 import ReactMarkdown from "react-markdown";
 import useYamlSection from "./useYamlSection";
 
@@ -45,7 +45,13 @@ export default function FormattedContainer({ color, category = "exp", name = "Ex
 
         <Stack px={4} spacing={4} >
           {experience.map((exp, idx) => (
-            <Fade bottom key={exp.company + idx}>
+            <motion.div
+              key={exp.company + idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }} // only trigger once on scroll
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <Card size="sm" bg="rgba(0, 0, 0, 0.4)" // semi-transparent dark
                 backdropFilter="blur(10px)" // frosted glass
                 borderRadius="2xl"
@@ -104,7 +110,7 @@ export default function FormattedContainer({ color, category = "exp", name = "Ex
                   </Stack>
                 </CardBody>
               </Card>
-            </Fade>
+            </motion.div>
           ))}
         </Stack>
       </Stack>
