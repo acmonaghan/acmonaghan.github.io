@@ -1,0 +1,25 @@
+{
+  "short_name": "Ashley Monaghan",
+  "name": "Ashley Monaghan",
+  "icons": [
+    {
+      "src": "milky-way.svg",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-svg"
+    },
+    {
+      "src": "milky-way.svg",
+      "type": "image/svg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "milky-way.svg",
+      "type": "image/svg",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

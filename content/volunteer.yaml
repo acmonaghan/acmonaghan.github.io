@@ -1,0 +1,47 @@
+
+- company: Melbourne University Physics Students' Society  
+  duration: 3 years 3 months
+  image: https://media.licdn.com/dms/image/v2/C4E0BAQFkOWqrrMNomg/company-logo_100_100-alternative/company-logo_100_100-alternative/0/1630651883373?e=1753315200&v=beta&t=0mE_agz7KPRy_2_GSUMWbightL9u5AB6cONWzjeoKC4
+  roles:
+    - position: President
+      start: March 2023
+      end: May 2024
+      badges:
+        - name: Microsoft Outlook
+          color: blue
+      listItems:
+        - |
+          Coordinated careers nights, talks and major collaboration events with partner organisations to create networking experiences for physics students
+        - |
+          Developed diversity initiatives to increase participation of women in STEM and provided opportunities for club collaborations with international programs.
+        - |
+          Maintained strong relationships with members, sponsors, and community partners.
+        - |
+          Managed club finances and budget, ensuring financial stability and sustainability.
+    - position: Vice President
+      start: March 2022 
+      end: March 2023
+      
+      
+- company: University of Melbourne
+  image: https://yt3.googleusercontent.com/sSS0kQKNFLdVTkJQjo_SmDcK9wSSCzcrUoRgcc7swWTd6x92lZ25-r-X0aTjzHxh8vJjrjpWhbo=s900-c-k-c0x00ffffff-no-rj
+  duration: "8 months"
+  roles:
+    - position: Peer Mentor
+      start: December 2021
+      end: July 2022
+      listItems:
+        - |
+          Mentored and supported students to achieve their personal, academic, and career goals.
+        - |
+          Developed and maintained positive relationships with mentees, offering guidance, support and encouragement
+        - |
+          Provided academic and personal support, helping mentees to overcome challenges and build resilience.
+        - |
+          Encouraged mentees to set achievable goals and provided guidance on how to reach them.
+      badges:
+        - name: Microsoft Outlook
+          color: blue
+        - name: Project Management
+          color: green
+

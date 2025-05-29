@@ -1,0 +1,24 @@
+- company: University of Melbourne
+  position: Masters of Science, Physics
+  image: https://yt3.googleusercontent.com/sSS0kQKNFLdVTkJQjo_SmDcK9wSSCzcrUoRgcc7swWTd6x92lZ25-r-X0aTjzHxh8vJjrjpWhbo=s900-c-k-c0x00ffffff-no-rj
+  roles:
+    - position: Masters of Science, Physics
+      start: January 2024
+      end: December 2025  
+      badges:
+        - name: Astrophysics
+          color: pink
+      listItems:
+        - |
+          Recipient of the [**Helen R Freeman Scholarship in Physics**](https://scholarships.unimelb.edu.au/awards/helen-r-freeman-scholarship-in-physics)
+    - position: Bachelor of Science - BS, Physics
+      start: January 2021
+      end: December 2023
+      badges:
+        - name: Physics
+          color: purple
+        - name: Maths
+          color: blue
+      listItems:
+        - | 
+          Grade: First Class Honours (H1/High Distinction)

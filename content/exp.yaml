@@ -1,0 +1,68 @@
+
+- company: iTelescope
+  
+  duration: February 2025 - Present
+  image: https://media.licdn.com/dms/image/v2/D560BAQFj8YqN5W6gBw/company-logo_100_100/B56ZX0BdrcGcAQ-/0/1743555780696/itelescope_net_logo?e=1753315200&v=beta&t=amPV3OdYRauUGEWdP9GDDMRImJ_l-6G0EYAuo5VcCZQ
+  roles:
+    - position: Astronomer - Telescope Engagement Advisor
+      start: February 2025
+      end: Present
+      badges:
+        - name: Badge
+          color: blue
+      listItems:
+        - |
+          Conducted hands-on support for astrophotography and observational projects, guiding users in image processing techniques and telescope settings to achieve high-quality astronomical data.
+        - |
+          Provided expert guidance on remote telescope operations, assisting users in optimising observations and troubleshooting technical challenges to ensure uninterrupted astronomical research and imaging.
+        - |
+          Developed comprehensive educational materials on astrophotography, observational techniques, and data processing.
+      
+- company: University of Melbourne
+  image: https://yt3.googleusercontent.com/sSS0kQKNFLdVTkJQjo_SmDcK9wSSCzcrUoRgcc7swWTd6x92lZ25-r-X0aTjzHxh8vJjrjpWhbo=s900-c-k-c0x00ffffff-no-rj
+  duration: "1 yr 4 mos"
+  roles:
+    - position: Women in Physics Coordinator
+      start: May 2024
+      end: Present
+      listItems:
+        - |
+          Coordinated and managed events aimed at promoting diversity in physics, including social catchups, workshops, and networking events
+        - |
+          Collaborated with university departments and external organisations to secure opportunities and events for diversity initiatives.
+        - |
+          Conducted surveys and analysed data to identify demographic in physics and to inform program development. 
+      badges:
+        - name: Microsoft Outlook
+          color: blue
+        - name: Project Management
+          color: green
+    - position: Student Peer Leader
+      start: Feb 2024
+      end: Present
+      listItems:
+        - |
+          Provided peer-to-peer advising, mentoring, and group facilitation, including Careers & Employability, Exchange & Study Abroad, and Melbourne Talks.
+        - |
+          Conducted administrative duties including program/service feedback, data collection, and document updates, while also contributing ideas for new student-centered projects and collaborations.
+        - |
+          Participated in profile building of the Network through social media videos and other marketing activities to inform students about available services
+      badges:
+        - name: Social Media Marketing
+          color: pink
+        - name: Microsoft Outlook
+          color: blue
+
+- company: Commonwealth Bank
+  image: https://media.licdn.com/dms/image/v2/D560BAQGLodxq_N-mcA/company-logo_100_100/company-logo_100_100/0/1692243810359/commonwealthbank_logo?e=1753315200&v=beta&t=LiwyW-VuLNOLwA0UmLcCGBn1_jN3uBB5G3n7QcG4_N0
+  roles:
+    - position: Technology Engineering Intern
+      start: November 2024
+      end: January 2025
+      listItems:
+        - |
+          Designed and implemented data-driven solutions to optimise banking operations, leveraging advanced programming skills in Python
+        - |
+          Developed and maintained RISE documentation to ensure clarity, consistency, and alignment with organisational cybersecurity standards
+        - |
+          Contributed to the development of cutting-edge policies and protocols for quantum-resistant cryptography, demonstrating a forward-thinking approach to emerging technologies and their real-world applications
