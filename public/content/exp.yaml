@@ -2,14 +2,16 @@
 - company: iTelescope
   
   duration: February 2025 - Present
-  image: https://media.licdn.com/dms/image/v2/D560BAQFj8YqN5W6gBw/company-logo_100_100/B56ZX0BdrcGcAQ-/0/1743555780696/itelescope_net_logo?e=1753315200&v=beta&t=amPV3OdYRauUGEWdP9GDDMRImJ_l-6G0EYAuo5VcCZQ
+  image: assets/itelescope.jpg
   roles:
     - position: Astronomer - Telescope Engagement Advisor
       start: February 2025
       end: Present
       badges:
         - name: Radio Astronomy
-          color: blue
+          color: red
+        - name: Observational Astronomy
+          color: yellow
       listItems:
         - |
           Conducted hands-on support for astrophotography and observational projects, guiding users in image processing techniques and telescope settings to achieve high-quality astronomical data.
@@ -19,9 +21,21 @@
           Developed comprehensive educational materials on astrophotography, observational techniques, and data processing.
       
 - company: University of Melbourne
-  image: https://yt3.googleusercontent.com/sSS0kQKNFLdVTkJQjo_SmDcK9wSSCzcrUoRgcc7swWTd6x92lZ25-r-X0aTjzHxh8vJjrjpWhbo=s900-c-k-c0x00ffffff-no-rj
+  image: assets/unimelb.jpg
   duration: "1 yr 4 mos"
   roles:
+    - position: Academic Tutor - Faculty of Science
+      start: July 2024
+      end: Present
+      listItems:
+        - |
+          Delivered interactive astronomy tutorials using tools such as Stellarium, iTelescope, and planetarium software to visualise astronomical phenomena
+        - |
+          Simplified complex STEM topics for diverse learners through tailored, engaging instruction
+        - |
+          Collaborated with faculty to align tutorials with curriculum objectives and improve student learning outcomes
+
+
     - position: Women in Physics Coordinator
       start: May 2024
       end: Present
@@ -54,7 +68,7 @@
           color: blue
 
 - company: Commonwealth Bank
-  image: https://media.licdn.com/dms/image/v2/D560BAQGLodxq_N-mcA/company-logo_100_100/company-logo_100_100/0/1692243810359/commonwealthbank_logo?e=1753315200&v=beta&t=LiwyW-VuLNOLwA0UmLcCGBn1_jN3uBB5G3n7QcG4_N0
+  image: assets/cba.jpg
   roles:
     - position: Technology Engineering Intern
       start: November 2024
@@ -66,3 +80,30 @@
           Developed and maintained RISE documentation to ensure clarity, consistency, and alignment with organisational cybersecurity standards
         - |
           Contributed to the development of cutting-edge policies and protocols for quantum-resistant cryptography, demonstrating a forward-thinking approach to emerging technologies and their real-world applications
+
+
+- company: ARC Centre for Excellence for Dark Matter Particle Physics
+  image: assets/arc.jpg
+  roles:
+    - position: Postgraduate Student Researcher
+      start: February 2024
+      end: November 2024
+      listItems:
+        - |
+          Investigated dark matter detection using the SABRE South experiment by analysing theoretical data and sensitivity studies, enhancing detection capabilities for low-mass WIMPs
+        - |
+          Engaged in phenomenological analysis of WIMPS (Weakly Interacting Massive Particles) and extracted detector's limitations by using Python, C and ROOT
+        - |
+          Studied B-meson decays at Belle II by applying selection criteria and performing statistical analysis, contributing to the search for new physics beyond the Standard Model
+
+- company: KEK – High Energy Accelerator Research Organization
+  image: assets/kek.jpg
+  roles:
+    - position: Research Student
+      start: June 2023 
+      end: August 2023
+      listItems:
+        - | 
+          Conducted large-scale data analysis of B-meson decays and dark sector particles at Belle II
+        - |
+          Designed ML algorithms for particle event reconstruction to extract physical features from experimental data

@@ -1,7 +1,7 @@
 
 - company: Melbourne University Physics Students' Society  
   duration: 3 years 3 months
-  image: https://media.licdn.com/dms/image/v2/C4E0BAQFkOWqrrMNomg/company-logo_100_100-alternative/company-logo_100_100-alternative/0/1630651883373?e=1753315200&v=beta&t=0mE_agz7KPRy_2_GSUMWbightL9u5AB6cONWzjeoKC4
+  image: assets/pss.jpg
   roles:
     - position: President
       start: March 2023
@@ -21,10 +21,12 @@
     - position: Vice President
       start: March 2022 
       end: March 2023
-      
+    - position: First Year Representative
+      start: March 2021 
+      end: March 2022
       
 - company: University of Melbourne
-  image: https://yt3.googleusercontent.com/sSS0kQKNFLdVTkJQjo_SmDcK9wSSCzcrUoRgcc7swWTd6x92lZ25-r-X0aTjzHxh8vJjrjpWhbo=s900-c-k-c0x00ffffff-no-rj
+  image: assets/unimelb.jpg
   duration: "8 months"
   roles:
     - position: Peer Mentor
